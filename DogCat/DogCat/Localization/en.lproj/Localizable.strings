@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  DogCat
+
+  Created by Dmitry Rybakov on 2021-09-07.
+  
+*/
+
+// Breed screen
+"breedNames_screen_title" = "Breeds";
+"breedNames_favoritesButton_Title" = "Favorites";
+// Favorites screen
+"favorites_screen_title" = "Favorites";
+"favorites_screen_noResults" = "No results";
+"favorites_searchBar_placeholder" = "Breed name";
+// General networking
+"generalNetworking_noData" = "No data";
+"generalNetworking_unrecoverableError" = "Unrecoverable error. Pull to refresh later.";
+"generalNetworking_noNetwork" = "No network. Automatically re-try.";

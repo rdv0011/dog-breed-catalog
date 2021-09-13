@@ -13,13 +13,15 @@ final class BreedsCollectionViewCell: UICollectionViewCell {
     @UsesAutoLayout var imageView = ImageViewShadowed().then {
         // Kepp aspect ratio
         $0.contentMode = .scaleAspectFill
-        $0.imageShadowOpacity = 0.8
+        $0.imageShadowOpacity = 0.3
         $0.imageShadowColor = .label
-        $0.imageShadowRadius = 3
+        $0.imageShadowRadius = 1
+        $0.imageShadowOffset = CGSize(width: -2, height: -2)
     }
     @UsesAutoLayout var breedNameLabel = UILabel().then {
         $0.textAlignment = .center
         $0.backgroundColor = .systemBackground
+        $0.font = .systemFont(ofSize: 12, weight: .light)
     }
     @UsesAutoLayout var activityIndicator = UIActivityIndicatorView().then {
         $0.hidesWhenStopped = true
@@ -28,6 +30,7 @@ final class BreedsCollectionViewCell: UICollectionViewCell {
         $0.startAnimating()
     }
     var imageDownloadingSubscription: AnyCancellable?
+    private let breedNameLabelHeight = CGFloat(23)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,7 +65,8 @@ final class BreedsCollectionViewCell: UICollectionViewCell {
             // Breed name
             breedNameLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
             breedNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            breedNameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            breedNameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            breedNameLabel.heightAnchor.constraint(equalToConstant: self.breedNameLabelHeight)
         ])
 
     }

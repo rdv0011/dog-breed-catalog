@@ -1,12 +1,7 @@
 # Dog Breed Catalog
 Open source dog images catalog viewer
 
-<table cellpadding="0" cellspacing="0" border="0">
-	<tr>
-		<td><img src="dog-cat-breeds.png" width="350"/></td>
-		<td><img src="dog-cat-favorites.gif" width="350"/></td>
-	</tr>
-</table>
+<img src="dog-cat-breeds.png" width="393"/><img src="dog-cat-favorites.gif" width="404"/>
 
 The app consists of three screens: breed names with random images of each breed, images for a particular breed and favorites. The high level design of the app is based on the Coordinator pattern. There are two important parts: [NavigationRouting](x-source-tag://NavigationRouting) which is responsible for push/pop navigation stack operations and [NavigationCoordinating](x-source-tag://NavigationCoordinating) which encapsulates instantiating and transition between view controllers. So, view controllers itself does not know dependencies and has nothing to do with transitions. There are two main types of the routers: for horizontal flow and vertical flow. The horizontal flow means navigating back and forth in the stack(push/pop) and vertical flow means showing some view controller modally(present). In this app there is no vertical flow thus no vertical router is implemented.
 

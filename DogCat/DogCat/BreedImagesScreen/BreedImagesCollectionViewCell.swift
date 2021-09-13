@@ -14,9 +14,10 @@ final class BreedImagesCollectionViewCell: UICollectionViewCell {
     lazy var imageView = ImageViewShadowed().then {
         // Kepp aspect ratio
         $0.contentMode = .scaleAspectFill
-        $0.imageShadowOpacity = 0.8
+        $0.imageShadowOpacity = 0.3
         $0.imageShadowColor = .label
-        $0.imageShadowRadius = 3
+        $0.imageShadowRadius = 1
+        $0.imageShadowOffset = CGSize(width: -2, height: -2)
         $0.isAutoLayout = true
     }
     @UsesAutoLayout var activityIndicator = UIActivityIndicatorView().then {

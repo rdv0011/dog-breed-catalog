@@ -17,6 +17,9 @@ The app also supports string localization, assets constants and logging. The loc
 
 The functional Combine framework is widely used in the app to build a bridge between the data model and UI. So, when something is written to the persistence storage the changes are propagated automatically to the UI level.
 
-A wide variety of extensions are used to eliminate boilerplate code like: [Then](x-source-tag://Then) to set properties in place of definition, [UsesAutoLayout](x-source-tag://UsesAutoLayout) to enable auto layout at the definition, ```weakAssign```, ```executeOnMain``` to avoid boiler plating when subscribing to publishers.
+A wide variety of extensions are used to eliminate boilerplate code like the following:
+- [```Then```](x-source-tag://Then) to set properties in place of definition
+- [```UsesAutoLayout```](x-source-tag://UsesAutoLayout) to enable auto layout at the definition,
+- ```weakAssign```, ```executeOnMain``` to avoid boiler plating when subscribing to publishers
 
-This sample app also contains unit tests for demoing purposes. To monitore publisher values in unit tests a thirdparty package CombineExpectations is used.
+This sample app also contains unit tests for demo purposes. Also to monitor publisher values in unit tests a thirdparty package CombineExpectations is used.

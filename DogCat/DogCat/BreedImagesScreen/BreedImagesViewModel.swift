@@ -109,28 +109,24 @@ class BreedImagesViewModel {
     }
 
     // MARK:- Private vars
-    private let dogService: DogServicable
     private var subscriptions = Set<AnyCancellable>()
     private let mode: Mode
-    private let favoritesStore: FavoritesStoring
     @Published private var contentRefreshing: ViewModelContentRefreshingState = .finished(contentAvailable: nil)
     private var availableContent: AnyPublisher<ViewModelContentAvailability?, Never> {
         $contentRefreshing
             .map { refreshing in refreshing.availableContent }
             .eraseToAnyPublisher()
     }
-    private let connectionMonitoring: NetworkConnectionMonitoring
     private let searchResultsDismissingSubject = PassthroughSubject<Void, Never>()
     private let searchResultsSubject = PassthroughSubject<[String], Never>()
 
-    init(dogService: DogServicable,
-         mode: Mode,
-         favoritesStore: FavoritesStoring,
-         connectionMonitoring: NetworkConnectionMonitoring) {
-        self.dogService = dogService
+    // MARK:- Dependencies
+    @Injectable private var connectionMonitoring: NetworkConnectionMonitoring
+    @Injectable private var dogService: DogServicable
+    @Injectable private var favoritesStore: FavoritesStoring
+
+    init(mode: Mode) {
         self.mode = mode
-        self.favoritesStore = favoritesStore
-        self.connectionMonitoring = connectionMonitoring
 
         subscribe()
     }

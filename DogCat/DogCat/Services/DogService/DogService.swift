@@ -13,14 +13,12 @@ final class DogService: DogServicable {
         let jsonDecoder: JSONDecoder
     }
 
-    private let cache = ImageCache()
-    private let configuration: Configuration
-    private let connectionMonitoring: NetworkConnectionMonitoring
+    // MARK:- Dependencies
+    @Injectable private var configuration: Configuration
+    @Injectable private var connectionMonitoring: NetworkConnectionMonitoring
+    @Injectable private var cache: ImageCache
 
-    init(configuration: Configuration,
-         connectionMonitoring: NetworkConnectionMonitoring) {
-        self.configuration = configuration
-        self.connectionMonitoring = connectionMonitoring
+    init() {
     }
 
     func allBreeds() -> AnyPublisher<[String], NetworkCommunicationError> {

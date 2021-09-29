@@ -15,9 +15,6 @@ enum AppLifecycleEvent {
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let appLifecycleSubject = PassthroughSubject<AppLifecycleEvent, Never>()
-    var appLifecycle: AnyPublisher<AppLifecycleEvent, Never> {
-        appLifecycleSubject.eraseToAnyPublisher()
-    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -44,5 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         appLifecycleSubject.send(.applicationDidEnterBackground(application))
+    }
+}
+
+extension AppDelegate {
+    static var shared: AppDelegate {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Failed to cast to \(AppDelegate.self)")
+        }
+        return appDelegate
+    }
+
+    var appLifecycle: AnyPublisher<AppLifecycleEvent, Never> {
+        appLifecycleSubject.eraseToAnyPublisher()
     }
 }

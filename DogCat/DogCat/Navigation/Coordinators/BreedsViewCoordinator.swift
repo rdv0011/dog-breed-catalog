@@ -12,18 +12,15 @@ final class BreedsViewCoordinator: NavigationCoordinating {
 
     var router: NavigationRouting
     private lazy var breedsViewControllerUnwrapped = {
-        BreedsViewController(viewModel: self.viewModelFactory.makeBreedsViewModel()).then {
+        BreedsViewController(viewModel: BreedsViewModel()).then {
             $0.delegate = self
         }
     }()
     private lazy var breedsViewController = UINavigationController(rootViewController: breedsViewControllerUnwrapped)
     private lazy var childRouter = NavigationRouter(navigationController: breedsViewController)
-    private let viewModelFactory: BreedsViewModelFactoryProtocol
 
-    init(router: NavigationRouting,
-         viewModelFactory: BreedsViewModelFactoryProtocol) {
+    init(router: NavigationRouting) {
         self.router = router
-        self.viewModelFactory = viewModelFactory
     }
 
     func present(animated: Bool, onDismissed: (() -> Void)?) {
@@ -35,14 +32,12 @@ final class BreedsViewCoordinator: NavigationCoordinating {
 
 extension BreedsViewCoordinator: BreedsViewControllerDelegate {
     func breedSelected(breedName: String) {
-        let viewModel = viewModelFactory.makeBreedImagesViewModel(mode: .breeds(name: breedName))
-        let breedImagesViewController = BreedImagesViewController(viewModel: viewModel)
+        let breedImagesViewController = BreedImagesViewController(viewModel: BreedImagesViewModel(mode: .breeds(name: breedName)))
         childRouter.present(breedImagesViewController, animated: true)
     }
 
     func favoritesPressed() {
-        let viewModel = viewModelFactory.makeBreedImagesViewModel(mode: .favorites)
-        let breedImagesViewController = BreedImagesViewController(viewModel: viewModel)
+        let breedImagesViewController = BreedImagesViewController(viewModel: BreedImagesViewModel(mode: .favorites))
         childRouter.present(breedImagesViewController, animated: true)
     }
 }

@@ -58,15 +58,14 @@ class BreedsViewModel {
             .eraseToAnyPublisher()
     }
 
-    private let dogService: DogServicable
-    private let connectionMonitoring: NetworkConnectionMonitoring
     private var subscriptions = [AnyCancellable]()
     private var breedNameToRandomImageUrls = [String: URL]()
 
-    init(dogService: DogServicable, connectionMonitoring: NetworkConnectionMonitoring) {
-        self.dogService = dogService
-        self.connectionMonitoring = connectionMonitoring
+    // MARK:- Dependencies
+    @Injectable private var dogService: DogServicable
+    @Injectable private var connectionMonitoring: NetworkConnectionMonitoring
 
+    init() {
         subscribe()
     }
 

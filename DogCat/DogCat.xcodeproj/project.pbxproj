@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F126B01A26EE52960097C583 /* ImageViewShadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126B01926EE52960097C583 /* ImageViewShadowed.swift */; };
-		F13739D526E75FE2009E89B2 /* NavigationCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13739D426E75FE2009E89B2 /* NavigationCoordinatorFactory.swift */; };
 		F13739D726E76B2E009E89B2 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13739D626E76B2E009E89B2 /* Localized.swift */; };
 		F13739DB26E76FC5009E89B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F13739DD26E76FC5009E89B2 /* Localizable.strings */; };
 		F13739E026E79839009E89B2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13739DF26E79839009E89B2 /* Asset.swift */; };
@@ -43,7 +42,6 @@
 		F154A54B26D9569E002D680F /* NavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154A54A26D9569E002D680F /* NavigationCoordinating.swift */; };
 		F154A54E26D95FD8002D680F /* BreedsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154A54D26D95FD8002D680F /* BreedsViewCoordinator.swift */; };
 		F154A55026D96782002D680F /* SceneDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154A54F26D96782002D680F /* SceneDelegateRouter.swift */; };
-		F154A55226D96FEE002D680F /* BreedsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154A55126D96FEE002D680F /* BreedsViewModelFactory.swift */; };
 		F154A56126D9806E002D680F /* NetworkCommunicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154A55426D9806E002D680F /* NetworkCommunicationError.swift */; };
 		F154A56226D9806E002D680F /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154A55526D9806E002D680F /* NetworkRequest.swift */; };
 		F154A56326D9806E002D680F /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154A55626D9806E002D680F /* ServiceEnvironment.swift */; };
@@ -74,6 +72,11 @@
 		F192747A26E022D100AFB159 /* UIRefreshControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192747926E022D100AFB159 /* UIRefreshControl+Extension.swift */; };
 		F192747C26E11B1400AFB159 /* Set+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192747B26E11B1400AFB159 /* Set+Extension.swift */; };
 		F192747E26E144B400AFB159 /* UICollectionViewDiffableDataSource+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192747D26E144B400AFB159 /* UICollectionViewDiffableDataSource+Extension.swift */; };
+		F1C826A427044BB200C2943E /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C826A327044BB200C2943E /* Dependency.swift */; };
+		F1C826A627044D1100C2943E /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C826A527044D1100C2943E /* DependencyContainer.swift */; };
+		F1C826A827045DB700C2943E /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C826A727045DB700C2943E /* Injectable.swift */; };
+		F1C826AB27045FE000C2943E /* DependencyContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C826AA27045FE000C2943E /* DependencyContainer+Extension.swift */; };
+		F1C826AE270485B000C2943E /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F1C826AD270485B000C2943E /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +91,6 @@
 
 /* Begin PBXFileReference section */
 		F126B01926EE52960097C583 /* ImageViewShadowed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewShadowed.swift; sourceTree = "<group>"; };
-		F13739D426E75FE2009E89B2 /* NavigationCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinatorFactory.swift; sourceTree = "<group>"; };
 		F13739D626E76B2E009E89B2 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		F13739DC26E76FC5009E89B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F13739DF26E79839009E89B2 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 		F154A54A26D9569E002D680F /* NavigationCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinating.swift; sourceTree = "<group>"; };
 		F154A54D26D95FD8002D680F /* BreedsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsViewCoordinator.swift; sourceTree = "<group>"; };
 		F154A54F26D96782002D680F /* SceneDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateRouter.swift; sourceTree = "<group>"; };
-		F154A55126D96FEE002D680F /* BreedsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsViewModelFactory.swift; sourceTree = "<group>"; };
 		F154A55426D9806E002D680F /* NetworkCommunicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCommunicationError.swift; sourceTree = "<group>"; };
 		F154A55526D9806E002D680F /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		F154A55626D9806E002D680F /* ServiceEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
@@ -157,6 +158,10 @@
 		F192747926E022D100AFB159 /* UIRefreshControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extension.swift"; sourceTree = "<group>"; };
 		F192747B26E11B1400AFB159 /* Set+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Extension.swift"; sourceTree = "<group>"; };
 		F192747D26E144B400AFB159 /* UICollectionViewDiffableDataSource+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+Extension.swift"; sourceTree = "<group>"; };
+		F1C826A327044BB200C2943E /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		F1C826A527044D1100C2943E /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		F1C826A727045DB700C2943E /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		F1C826AA27045FE000C2943E /* DependencyContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C826AE270485B000C2943E /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +275,7 @@
 		F154A52926D91A7A002D680F /* DogCat */ = {
 			isa = PBXGroup;
 			children = (
+				F1C826A927045FAC00C2943E /* Dependencies */,
 				F161423526DBD97800453F5A /* FavoritesStore */,
 				F161421E26DB6E8A00453F5A /* BreedImagesScreen */,
 				F154A55D26D9806E002D680F /* Extensions */,
@@ -380,7 +387,6 @@
 			isa = PBXGroup;
 			children = (
 				F192747226DE6C5400AFB159 /* ViewModelContentAvailability.swift */,
-				F154A55126D96FEE002D680F /* BreedsViewModelFactory.swift */,
 				F154A55E26D9806E002D680F /* ImageCache.swift */,
 				F161422126DB729300453F5A /* PropertyWrapper.swift */,
 				F161423026DBA8BC00453F5A /* Then.swift */,
@@ -396,7 +402,6 @@
 			children = (
 				F154A54A26D9569E002D680F /* NavigationCoordinating.swift */,
 				F154A54D26D95FD8002D680F /* BreedsViewCoordinator.swift */,
-				F13739D426E75FE2009E89B2 /* NavigationCoordinatorFactory.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -426,6 +431,25 @@
 				F126B01926EE52960097C583 /* ImageViewShadowed.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F1C826A227044B5000C2943E /* Injectable */ = {
+			isa = PBXGroup;
+			children = (
+				F1C826A327044BB200C2943E /* Dependency.swift */,
+				F1C826A527044D1100C2943E /* DependencyContainer.swift */,
+				F1C826A727045DB700C2943E /* Injectable.swift */,
+			);
+			path = Injectable;
+			sourceTree = "<group>";
+		};
+		F1C826A927045FAC00C2943E /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F1C826A227044B5000C2943E /* Injectable */,
+				F1C826AA27045FE000C2943E /* DependencyContainer+Extension.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		F1D83A8626ED4C6C00EF1259 /* Services */ = {
@@ -475,6 +499,9 @@
 			dependencies = (
 			);
 			name = DogCat;
+			packageProductDependencies = (
+				F1C826AD270485B000C2943E /* OrderedCollections */,
+			);
 			productName = DogCat;
 			productReference = F154A52726D91A7A002D680F /* DogCat.app */;
 			productType = "com.apple.product-type.application";
@@ -508,6 +535,7 @@
 			mainGroup = F154A51E26D91A79002D680F;
 			packageReferences = (
 				F13739FE26E94202009E89B2 /* XCRemoteSwiftPackageReference "CombineExpectations" */,
+				F1C826AC270485B000C2943E /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = F154A52826D91A7A002D680F /* Products */;
 			projectDirPath = "";
@@ -560,16 +588,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F161423126DBA8BC00453F5A /* Then.swift in Sources */,
+				F1C826AB27045FE000C2943E /* DependencyContainer+Extension.swift in Sources */,
 				F192747826DF96BD00AFB159 /* NetworkConnectionMonitor.swift in Sources */,
 				F154A52B26D91A7A002D680F /* AppDelegate.swift in Sources */,
 				F1373A2426EBEBD5009E89B2 /* UITableViewCell+Extension.swift in Sources */,
 				F154A52D26D91A7A002D680F /* SceneDelegate.swift in Sources */,
 				F1373A1E26EBD55F009E89B2 /* CellIdentifiableConfigurable.swift in Sources */,
 				F13739E526E7B6C7009E89B2 /* Logger+Extension.swift in Sources */,
-				F13739D526E75FE2009E89B2 /* NavigationCoordinatorFactory.swift in Sources */,
 				F154A55026D96782002D680F /* SceneDelegateRouter.swift in Sources */,
 				F154A56126D9806E002D680F /* NetworkCommunicationError.swift in Sources */,
-				F154A55226D96FEE002D680F /* BreedsViewModelFactory.swift in Sources */,
 				F161423E26DD826D00453F5A /* Reachability.swift in Sources */,
 				F161421D26DB6E4B00453F5A /* BreedsCollectionViewCell.swift in Sources */,
 				F1373A1C26EBD3E9009E89B2 /* SearchResultsViewModel.swift in Sources */,
@@ -585,9 +612,11 @@
 				F154A54626D92CD3002D680F /* NavigationRouting.swift in Sources */,
 				F154A56926D9806E002D680F /* ImageCache.swift in Sources */,
 				F161422026DB6F1400453F5A /* BreedImagesCollectionViewCell.swift in Sources */,
+				F1C826A427044BB200C2943E /* Dependency.swift in Sources */,
 				F192747E26E144B400AFB159 /* UICollectionViewDiffableDataSource+Extension.swift in Sources */,
 				F161422526DB733600453F5A /* UIView+Extension.swift in Sources */,
 				F154A56626D9806E002D680F /* DogService.swift in Sources */,
+				F1C826A827045DB700C2943E /* Injectable.swift in Sources */,
 				F13739E326E7B5CE009E89B2 /* Logger.swift in Sources */,
 				F1373A2226EBDDC3009E89B2 /* TableViewCellStringConfigurator.swift in Sources */,
 				F154A54426D91B90002D680F /* BreedsViewModel.swift in Sources */,
@@ -598,6 +627,7 @@
 				F154A56326D9806E002D680F /* ServiceEnvironment.swift in Sources */,
 				F161423926DCB57C00453F5A /* FavoriteIconView.swift in Sources */,
 				F192747A26E022D100AFB159 /* UIRefreshControl+Extension.swift in Sources */,
+				F1C826A627044D1100C2943E /* DependencyContainer.swift in Sources */,
 				F154A56A26D9806E002D680F /* Publisher+Extension.swift in Sources */,
 				F192747C26E11B1400AFB159 /* Set+Extension.swift in Sources */,
 				F13739E026E79839009E89B2 /* Asset.swift in Sources */,
@@ -888,6 +918,14 @@
 				minimumVersion = 0.10.0;
 			};
 		};
+		F1C826AC270485B000C2943E /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -895,6 +933,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F13739FE26E94202009E89B2 /* XCRemoteSwiftPackageReference "CombineExpectations" */;
 			productName = CombineExpectations;
+		};
+		F1C826AD270485B000C2943E /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1C826AC270485B000C2943E /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

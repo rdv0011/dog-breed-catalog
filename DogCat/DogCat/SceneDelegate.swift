@@ -7,24 +7,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-    var appDelegate: AppDelegate {
-        guard let appDelegate = (UIApplication.shared.delegate as? AppDelegate) else {
-            fatalError("Failed to get app delegate")
-        }
-        return appDelegate
-    }
-
-    private lazy var coordinatorFactory: NavigationCoordinatorFactory = {
-        guard let window = window else {
-            fatalError("Windows is nil")
-        }
-        return NavigationCoordinatorFactory(window: window,
-                                            appDelegate: appDelegate)
-    }()
-    private lazy var rootCoordinator: NavigationCoordinating = {
-        coordinatorFactory.makeBreedsViewCoordinator()
-    }()
+    private var rootCoordinator: NavigationCoordinating?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -34,7 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             self.window = window
-
+            // Create dependencies
+            DependencyContainer.build(for: .dev)
+            // Create root view controller and present view
+            let rootCoordinator = makeRootCoordinator(window)
+            self.rootCoordinator = rootCoordinator
             rootCoordinator.present(animated: true)
         }
     }
@@ -66,7 +53,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+}
 
-
+extension SceneDelegate {
+    private func makeRootCoordinator(_ window: UIWindow) -> NavigationCoordinating {
+        BreedsViewCoordinator(router: SceneDelegateRouter(window: window))
+    }
 }
 
